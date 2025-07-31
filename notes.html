@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Notes - Learn Ledger</title>
+    <link rel="stylesheet" href="notes-styles.css">
+</head>
+<body>
+    <nav class="notes-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="back-to-hub" id="backToHub">← Back to Chapters</button>
+                <h2 id="chapterTitle">Loading...</h2>
+            </div>
+            <div class="nav-right">
+                <button class="download-btn" id="downloadNotes">📄 Download PDF</button>
+                <button class="theme-toggle" id="themeToggle">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-container">
+        <aside class="notes-sidebar">
+            <h3>Chapter Sections</h3>
+            <ul class="notes-menu">
+                <li><a href="#introduction" class="menu-link active">Introduction</a></li>
+                <li><a href="#content" class="menu-link">Main Content</a></li>
+                <li><a href="#formulas" class="menu-link">Formulas</a></li>
+                <li><a href="#practice" class="menu-link">Practice</a></li>
+                <li><a href="#pyq" class="menu-link">Board Questions</a></li>
+            </ul>
+        </aside>
+        
+        <main class="notes-content" id="notesContent">
+            <div class="loading">Loading chapter content...</div>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="notes.js"></script>
+</body>
+</html>

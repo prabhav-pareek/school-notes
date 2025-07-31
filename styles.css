@@ -1,0 +1,1462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --border-color: #e0e0e0;
+    --accent-color: #333333;
+    --hover-color: #f0f0f0;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+/* Login page theme toggle */
+.login-theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.login-theme-toggle .theme-toggle {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.login-theme-toggle .theme-toggle:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Login credentials display */
+.login-credentials {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-credentials h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.login-credentials p {
+    color: var(--text-secondary);
+    margin: 0.25rem 0;
+    font-family: 'Courier New', monospace;
+}
+
+.login-credentials small {
+    color: var(--text-secondary);
+    font-style: italic;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Error message styles */
+.error-message {
+    background-color: #fee;
+    color: #c33;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid #fcc;
+}
+
+[data-theme="dark"] .error-message {
+    background-color: #2d1b1b;
+    color: #ff6b6b;
+    border-color: #4a2c2c;
+}
+
+/* Shake animation for error */
+@keyframes shake {
+    0%, 20%, 40%, 60%, 80% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Placeholder styling */
+input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+/* Contact page theme toggle */
+.contact-theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.contact-theme-toggle .theme-toggle {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.contact-theme-toggle .theme-toggle:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Enhanced contact page styling */
+.contact-note {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--bg-primary);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+}
+
+.contact-note p {
+    color: var(--text-primary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.feature-list li {
+    color: var(--text-secondary);
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.feature-list li::before {
+    content: '';
+    margin-right: 0.5rem;
+}
+
+/* Improved contact item spacing */
+.contact-item {
+    margin-bottom: 2rem;
+}
+
+.contact-item:last-child {
+    margin-bottom: 1rem;
+}
+
+.contact-item h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.contact-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.contact-item p:last-child {
+    margin-bottom: 0;
+}
+
+/* Social link enhancement */
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    padding: 0.75rem;
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.social-link:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.instagram-icon {
+    width: 28px;
+    height: 28px;
+    fill: var(--text-primary);
+    flex-shrink: 0;
+}
+
+/* Mobile responsive for contact theme toggle */
+@media (max-width: 768px) {
+    .contact-theme-toggle {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .contact-theme-toggle .theme-toggle {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contact-card {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .contact-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-list li {
+        font-size: 0.85rem;
+    }
+    
+    .social-link {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+    
+    .instagram-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .contact-item {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Enhanced search results styling */
+.search-result-group {
+    border-left: 3px solid var(--accent-color);
+}
+
+.search-result-content {
+    padding: 0;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.result-item:hover {
+    background-color: var(--hover-color);
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.subject-result {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left: 4px solid #4CAF50;
+}
+
+.section-result {
+    background-color: rgba(33, 150, 243, 0.1);
+    border-left: 4px solid #2196F3;
+}
+
+.result-info h4 {
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.result-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.result-type {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.result-count {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.result-subject {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.result-sections {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.result-action {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.result-action:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+.section-chapters {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.section-chapters .chapter-item {
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-chapters .chapter-item:last-child {
+    border-bottom: none;
+}
+
+/* Search suggestions */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.search-suggestion {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+.search-suggestion:hover {
+    background-color: var(--hover-color);
+}
+
+.search-suggestion:last-child {
+    border-bottom: none;
+}
+
+.suggestion-type {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-left: 0.5rem;
+}
+
+/* Reset cursor for all text elements to default */
+* {
+    cursor: default;
+}
+
+/* Specific cursor styles for interactive elements only */
+button,
+a,
+.btn-primary,
+.back-btn,
+.theme-toggle,
+.nav-link,
+.class-card,
+.stream-card,
+.subject-card,
+.accordion-header,
+.chapter-link,
+.result-item,
+.result-action,
+.search-suggestion {
+    cursor: pointer !important;
+}
+
+/* Input elements should have text cursor */
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+    cursor: text !important;
+}
+
+/* Regular text elements should have default cursor */
+h1, h2, h3, h4, h5, h6,
+p, span, div:not(.clickable),
+.chapter-name,
+.result-info,
+.contact-info,
+.login-note,
+.result-meta,
+.result-type,
+.result-count,
+.result-subject,
+.result-sections {
+    cursor: default !important;
+}
+
+/* Icons should match their parent element's cursor */
+svg {
+    cursor: inherit;
+}
+
+/* Make sure clickable areas are clearly defined */
+.clickable {
+    cursor: pointer !important;
+}
+
+/* Hover states should only apply to interactive elements */
+.class-card:hover,
+.stream-card:hover,
+.subject-card:hover,
+.accordion-header:hover,
+.result-item:hover {
+    cursor: pointer;
+}
+
+/* Text selection cursor for selectable text */
+.selectable-text {
+    cursor: text;
+    user-select: text;
+}
+/* Ensure chapter names don't have pointer cursor */
+.chapter-item .chapter-name {
+    cursor: default !important;
+    user-select: text; /* Allow text selection */
+}
+
+/* Only the "View PDF" link should be clickable */
+.chapter-item .chapter-link {
+    cursor: pointer !important;
+}
+
+/* Navigation elements */
+.nav-brand h2 {
+    cursor: default !important;
+}
+
+/* Search results text */
+.result-info h4,
+.result-info p,
+.result-meta span {
+    cursor: default !important;
+}
+
+/* Contact page text */
+.contact-item h3,
+.contact-item p,
+.feature-list li {
+    cursor: default !important;
+}
+
+/* Login page text */
+.login-card h2,
+.login-credentials h4,
+.login-credentials p {
+    cursor: default !important;
+}
+
+/* Mobile responsive for search results */
+@media (max-width: 768px) {
+    .result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+    
+    .result-meta {
+        gap: 0.5rem;
+    }
+    
+    .result-action {
+        align-self: stretch;
+        text-align: center;
+    }
+    
+    .section-chapters .chapter-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+}
+/* Global cursor reset - remove pointer from all text */
+* {
+    cursor: default;
+    user-select: none; /* Prevent text selection as requested */
+}
+
+/* === INTERACTIVE ELEMENTS ONLY - Should have pointer cursor === */
+button,
+a,
+.btn-primary,
+.back-btn,
+.theme-toggle,
+.class-card,
+.stream-card,
+.subject-card,
+.accordion-header,
+.chapter-link,
+.result-item,
+.result-action,
+.search-suggestion,
+.social-link {
+    cursor: pointer !important;
+}
+
+/* === INPUT ELEMENTS - Should have text cursor === */
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+    cursor: text !important;
+    user-select: text !important; /* Allow text selection in inputs */
+}
+
+/* === NAVIGATION ELEMENTS - Remove pointer cursor === */
+.nav-brand,
+.nav-brand h2,
+.nav-link {
+    cursor: default !important;
+}
+
+/* Only make nav links clickable, not the text */
+.nav-link:hover {
+    cursor: pointer !important;
+}
+
+/* === CHAPTER NAMES AND DESCRIPTIONS - Remove pointer cursor === */
+.chapter-name,
+.chapter-item span,
+.subject-card h3,
+.subject-card p,
+.result-info,
+.result-info h4,
+.result-info p,
+.result-meta,
+.result-meta span,
+.result-type,
+.result-count,
+.result-subject,
+.result-sections {
+    cursor: default !important;
+    user-select: none !important;
+}
+
+/* === BACK BUTTONS - Only button should be clickable, not text === */
+.back-btn {
+    cursor: pointer !important;
+}
+
+/* === SEARCH BAR AREA - Fix cursor issues === */
+.search-container,
+.search-container input {
+    cursor: text !important;
+}
+
+.search-icon {
+    cursor: default !important;
+}
+
+/* Search placeholder and text */
+.search-container input::placeholder {
+    cursor: text !important;
+}
+
+/* === ACCORDION ELEMENTS === */
+.accordion-header {
+    cursor: pointer !important;
+}
+
+.accordion-header h3 {
+    cursor: pointer !important; /* Header text should be clickable */
+}
+
+.accordion-content,
+.chapter-list {
+    cursor: default !important;
+}
+
+/* === TITLES AND HEADINGS - Remove pointer cursor === */
+h1, h2, h3, h4, h5, h6,
+.main-title,
+.subjects-title,
+.chapters-title,
+#subjectsTitle,
+#chaptersTitle {
+    cursor: default !important;
+    user-select: none !important;
+}
+
+/* === CARDS - Only background should be clickable === */
+.class-card,
+.stream-card,
+.subject-card {
+    cursor: pointer !important;
+}
+
+.class-card h3,
+.class-card p,
+.stream-card h3,
+.stream-card p,
+.subject-card h3,
+.subject-card p {
+    cursor: pointer !important; /* Card text should inherit card's clickability */
+}
+
+/* === CONTACT PAGE ELEMENTS === */
+.contact-info,
+.contact-item,
+.contact-item h3,
+.contact-item p,
+.feature-list,
+.feature-list li,
+.contact-note,
+.contact-note p {
+    cursor: default !important;
+    user-select: none !important;
+}
+
+/* === LOGIN PAGE ELEMENTS === */
+.login-card h2,
+.login-credentials,
+.login-credentials h4,
+.login-credentials p,
+.login-credentials small,
+.login-note,
+.error-message {
+    cursor: default !important;
+    user-select: none !important;
+}
+
+/* === SECTION TAGS === */
+.section-tag {
+    cursor: default !important;
+    user-select: none !important;
+}
+
+/* === ICONS - Should inherit parent cursor === */
+svg {
+    cursor: inherit !important;
+}
+
+/* === SPECIAL CASES === */
+/* Make sure prompt card text is not clickable */
+.prompt-card,
+.prompt-card h2,
+.prompt-card p {
+    cursor: default !important;
+    user-select: none !important;
+}
+
+/* Search results grouping */
+.search-result-group .accordion-header h3 {
+    cursor: pointer !important; /* Should be clickable */
+}
+
+/* No results message */
+.chapters-container div[style*="text-align: center"] {
+    cursor: default !important;
+    user-select: none !important;
+}
+
+/* === FORM LABELS === */
+label {
+    cursor: default !important;
+    user-select: none !important;
+}
+
+/* === BACK LINKS === */
+.back-link {
+    cursor: pointer !important;
+}
+
+.back-link:hover {
+    cursor: pointer !important;
+}
+/* For the main chapter selection container */
+.chapter-container {
+    max-height: 70vh; /* Adjust as needed */
+    overflow-y: auto;
+    padding-right: 0.5rem; /* Space for scrollbar */
+}
+
+/* Style scrollbar for chapter container */
+.chapter-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chapter-container::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 4px;
+}
+
+.chapter-container::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+.chapter-container::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Force scrollable behavior on chapter containers */
+
+/* If this is in index.html - target the specific chapter list container */
+.subject-content,
+.chapters-grid,
+.chapters-container,
+.chapter-list {
+    max-height: 60vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding-right: 8px !important;
+}
+
+/* CLEAN SCROLLBAR FIX - Replace all previous scrollbar CSS with this */
+
+/* Remove any existing scrollbar styles first */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+}
+
+/* Target only the main chapter container */
+.subjects-container,
+.subject-content,
+.chapters-section {
+    max-height: 65vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
+}
+
+/* Clean scrollbar styling - only for the main container */
+.subjects-container::-webkit-scrollbar,
+.subject-content::-webkit-scrollbar,
+.chapters-section::-webkit-scrollbar {
+    width: 6px;
+}
+
+.subjects-container::-webkit-scrollbar-track,
+.subject-content::-webkit-scrollbar-track,
+.chapters-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.subjects-container::-webkit-scrollbar-thumb,
+.subject-content::-webkit-scrollbar-thumb,
+.chapters-section::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 3px;
+}
+
+.subjects-container::-webkit-scrollbar-thumb:hover,
+.subject-content::-webkit-scrollbar-thumb:hover,
+.chapters-section::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+}
+
+/* Hide scrollbars on all other elements */
+.notes-sidebar,
+.chapter-menu,
+.notes-menu,
+body,
+html {
+    overflow-x: hidden !important;
+    scrollbar-width: none !important;
+}
+
+.notes-sidebar::-webkit-scrollbar,
+.chapter-menu::-webkit-scrollbar,
+.notes-menu::-webkit-scrollbar {
+    display: none !important;
+}
+
+
+/* Mobile responsive for login theme toggle */
+@media (max-width: 768px) {
+    .login-theme-toggle {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .login-theme-toggle .theme-toggle {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .login-credentials {
+        margin-top: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .login-credentials h4 {
+        font-size: 0.9rem;
+    }
+    
+    .login-credentials p {
+        font-size: 0.85rem;
+    }
+}
+
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --border-color: #404040;
+    --accent-color: #ffffff;
+    --hover-color: #333333;
+    --shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-brand h2 {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.class-selector select {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    min-width: 150px;
+}
+
+.search-container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.search-icon {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    fill: var(--text-secondary);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-color);
+}
+
+.theme-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-primary);
+}
+
+.moon-icon {
+    display: none;
+}
+
+[data-theme="dark"] .sun-icon {
+    display: none;
+}
+
+[data-theme="dark"] .moon-icon {
+    display: block;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--hover-color);
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 80px);
+}
+
+/* Login Prompt */
+.login-prompt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.prompt-card {
+    text-align: center;
+    padding: 3rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow);
+}
+
+.prompt-card h2 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.prompt-card p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.back-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* Class Grid */
+.main-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.class-cards, .stream-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.class-card, .stream-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.class-card:hover, .stream-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.class-card h3, .stream-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.class-card p, .stream-card p {
+    color: var(--text-secondary);
+}
+
+/* Stream Selection */
+.stream-selection h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+/* Subjects Grid */
+.subjects-container h2, .chapters-container h2 {
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.subject-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.subject-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.subject-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.subject-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.section-tag {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Chapters Accordion */
+.chapters-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.accordion-header {
+    background-color: var(--bg-secondary);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: var(--hover-color);
+}
+
+.accordion-header h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.accordion-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-primary);
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: var(--bg-primary);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+}
+
+.chapter-list {
+    padding: 1rem 1.5rem;
+}
+
+.chapter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-item:hover {
+    background-color: var(--hover-color);
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.chapter-name {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.chapter-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.chapter-link:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+}
+
+/* Login Page */
+.login-container, .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.login-card, .contact-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: var(--shadow);
+}
+
+.contact-card {
+    max-width: 500px;
+}
+
+.login-card h2, .contact-card h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.login-note {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+}
+
+/* Contact Page */
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    margin-bottom: 2rem;
+}
+
+.contact-item h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.contact-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .nav-center {
+        order: 3;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .class-selector select, .search-container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .nav-right {
+        order: 2;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .class-cards, .stream-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .subjects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chapter-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .prompt-card {
+        padding: 2rem;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .class-card, .stream-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
